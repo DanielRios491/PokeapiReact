@@ -1,0 +1,38 @@
+.pokemon-card {
+    position: relative;
+    width: 378px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 16px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px;
+}
+
+.pokemon-card.grass {
+    background-color: #48bb78;
+}
+
+.pokemon-card.fire {
+    background-color: #f97316;
+}
+
+.pokemon-card.poison {
+    background-color: #9f7aea;
+}
+
+.card-text {
+    z-index: 2;
+}
+
+.pokemon-image {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    height: 100px;
+    z-index: 1;
+    pointer-events: none;
+}

@@ -1,0 +1,35 @@
+.type-badge {
+    padding: 5px 5px;
+    border-radius: 3px;
+    width: 62px;
+    height: 25px;
+    color: white;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.type-badge.grass {
+    background-color: #38a169;
+}
+
+.type-badge.poison {
+    background-color: #805ad5;
+}
+
+.type-badge.fire {
+    background-color: #ed8936;   
+}
+
+.pokemon-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 4px 0;
+}
+
+.pokemon-id {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffffcc;
+    margin-bottom: 4px;
+}
