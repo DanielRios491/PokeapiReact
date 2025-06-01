@@ -1,6 +1,5 @@
-import NumberAtom from "../atoms/NumberAtom";
-import LabelAtom from "../atoms/LabelAtom";
 import PokemonTypeMolecule from "../molecules/PokemonTypeMolecule";
+import InformationMolecule from "../molecules/InformationMolecule";
 import '../styles/PokemonCard.css';
 
 export default function PokemonCardOrganism({ id, name, types, image }) {
@@ -8,8 +7,7 @@ export default function PokemonCardOrganism({ id, name, types, image }) {
     return (
         <div className={`pokemon-card ${types[0].toLowerCase()}`}>
             <div className="card-text">
-                <NumberAtom id={id} />
-                <LabelAtom label={name} />
+                <InformationMolecule id={id} name={name} />
                 <PokemonTypeMolecule types={types} />
             </div>
 
