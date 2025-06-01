@@ -9,15 +9,15 @@
 }
 
 .type-badge.grass {
-    background-color: #38a169;
+    background-color: green;
 }
 
 .type-badge.poison {
-    background-color: #805ad5;
+    background-color: mediumslateblue;
 }
 
 .type-badge.fire {
-    background-color: #ed8936;   
+    background-color: orange;   
 }
 
 .pokemon-title {

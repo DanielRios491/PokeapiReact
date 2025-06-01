@@ -13,11 +13,11 @@
 }
 
 .pokemon-card.grass {
-    background-color: #48bb78;
+    background-color: #8BBE8A;
 }
 
 .pokemon-card.fire {
-    background-color: #f97316;
+    background-color: #F78551;
 }
 
 .pokemon-card.poison {
@@ -29,10 +29,8 @@
 }
 
 .pokemon-image {
-    position: absolute;
     bottom: 8px;
     right: 8px;
-    height: 100px;
     z-index: 1;
     pointer-events: none;
 }

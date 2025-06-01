@@ -1,4 +1,4 @@
-import "../styles/TypeBadgeAtom.css";
+import "../styles/AtomStyles.css";
 
 export default function TypeBadgeAtom({ type }) {
     return (

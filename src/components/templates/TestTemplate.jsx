@@ -1,5 +1,4 @@
-import PokemonCardOrganism from '../components/organisms/PokemonCardOrganism';
-import '../components/styles/TypeBadgeAtom.css';
+import PokemonCardOrganism from '../organisms/PokemonCardOrganism';
 
 const TestTemplate = () => (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
