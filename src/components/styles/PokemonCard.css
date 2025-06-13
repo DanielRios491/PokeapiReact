@@ -10,7 +10,7 @@
 }
 
 .card-text {
-    width: 50%;
+    width: 52%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -19,7 +19,7 @@
 }
 
 .card-image {
-    width: 50%;
+    width: 48%;
     background-image: url("../../assets/Pokeball.png");
 }
 
