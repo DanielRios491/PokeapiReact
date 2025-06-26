@@ -1,12 +1,12 @@
 .pokemon-card {
-    position: relative;
-    border-radius: 10px;
+    border-radius: 1rem;
     color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 30px;
+    aspect-ratio: 822/479;
 }
 
 .card-text {
@@ -21,6 +21,10 @@
 .card-image {
     width: 48%;
     background-image: url("../../assets/Pokeball.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 0;
 }
 
 .pokemon-card.grass {
@@ -36,13 +40,12 @@
 }
 
 .pokemon-image {
-    bottom: 8px;
-    right: 8px;
-    z-index: 1;
-    pointer-events: none;
+    max-width: 150%;
+    bottom: 1rem;
+    right: 1rem;
 }
 
 .pattern-img{
-    margin-top: 50px;
-    width: 80%;
+    max-width: 50%;
+    margin-top: 5rem;
 }

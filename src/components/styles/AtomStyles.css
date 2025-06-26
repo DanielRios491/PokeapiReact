@@ -1,25 +1,13 @@
 .type-badge {
-    padding: 5px 5px;
+    padding: 0.5rem 0.5rem;
     border-radius: 3px;
     color: white;
-    font-size: 12px;
-    margin-right: 4px;
-}
-
-.type-badge.grass {
-    background-color: green;
-}
-
-.type-badge.poison {
-    background-color: mediumslateblue;
-}
-
-.type-badge.fire {
-    background-color: orange;   
+    font-size: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .pokemon-title {
-    font-size: 36px;
+    font-size: 1rem;
     font-weight: bold;
     color: white;
 }
