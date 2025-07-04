@@ -1,4 +1,5 @@
 import TypeBadgeAtom from "../atoms/TypeBadgeAtom";
+import "../styles/MoleculeStyles.css";
 
 export default function PokemonTypeMolecule({ types }) {
     return (

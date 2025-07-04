@@ -1,0 +1,7 @@
+.pokemon-types {
+    flex-grow: 2;
+}
+
+.pokemon-information {
+    flex-grow: 3;
+}

@@ -18,7 +18,7 @@ export default function TestTemplate() {
         <div className='template-grid'>
             {
                 pokemons && pokemons.map(pokemon => 
-                    <div key={pokemon.id}>
+                    <div key={pokemon.id} className='card-container'>
                         <PokemonCardOrganism
                             id={pokemon.id}
                             name={pokemon.name}

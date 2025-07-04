@@ -6,7 +6,7 @@ import '../styles/PokemonCard.css';
 export default function PokemonCardOrganism({ id, name, types, color, image }) {
 
     return (
-        <div className={'pokemon-card'} style={{backgroundColor: `${color}`}}>
+        <div className={`pokemon-card ${types[0]}`} >
             <div className="card-text">
                 <img src={Pattern} alt="Pattern" className="pattern-img" />
                 <InformationMolecule id={id} name={name} />

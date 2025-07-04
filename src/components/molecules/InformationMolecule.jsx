@@ -1,9 +1,10 @@
 import NumberAtom from "../atoms/NumberAtom";
 import LabelAtom from "../atoms/LabelAtom";
+import "../styles/MoleculeStyles.css";
 
 export default function InformationMolecule({ id, name }) {
     return (
-        <div className="pokemon-types">
+        <div className="pokemon-information">
             <NumberAtom id={id} />
             <LabelAtom label={name} />
         </div>
