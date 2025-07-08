@@ -1,9 +1,57 @@
 .type-badge {
-    padding: 0.5rem 0.5rem;
+    padding: 0.1rem 0.5rem;
     border-radius: 3px;
     color: white;
     font-size: 0.5rem;
     margin-right: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.type-badge.grass {
+    background-color: #62B957;
+}
+
+.type-badge.fire {
+    background-color: #FD7D24;
+}
+
+.type-badge.fliying {
+    background-color: #748FC9;
+}
+
+.type-badge.water {
+    background-color: #58ABF6;
+}
+
+.type-badge.normal {
+    background-color: #B5B9C4;
+}
+
+.type-badge.poison {
+    background-color: #A552CC;
+}
+
+.type-badge.electric {
+    background-color: #F2CB55;
+}
+
+.type-badge.ground {
+    background-color: #F78551;
+}
+
+.type-badge.fairy {
+    background-color: #EBA8C3;
+}
+
+.type-badge.bug {
+    background-color: #8BD674;
+}
+
+.type-badge.fighting {
+    background-color: #EB4971;
 }
 
 .pokemon-title {

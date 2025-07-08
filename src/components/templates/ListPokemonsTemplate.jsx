@@ -3,7 +3,7 @@ import { fetchPokeApiData } from '../../api/PokeApiConsumptio';
 import { useState, useEffect } from 'react';
 import '../styles/TemplateStyles.css'
 
-export default function TestTemplate() {
+export default function ListPokemonsTemplate() {
 
     const [ pokemons, setPokemons ] = useState();
     useEffect(() => {

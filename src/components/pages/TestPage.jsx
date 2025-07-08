@@ -1,9 +1,15 @@
 // TestPage.js
 import React from 'react';
-import TestTemplate from '../templates/TestTemplate';
+import ListPokemonsTemplate from '../templates/ListPokemonsTemplate';
+import HeaderNavBar from '../organisms/HeaderNavBar';
 
 const TestPage = () => {
-    return <TestTemplate />
+    return (
+        <div>
+            <HeaderNavBar />
+            <ListPokemonsTemplate />
+        </div>
+    );
 };
 
 export default TestPage;
