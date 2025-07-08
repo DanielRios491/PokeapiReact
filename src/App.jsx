@@ -1,11 +1,11 @@
 import './App.css'
-import TestPage from './components/pages/TestPage'
+import MainLayout from './components/pages/MainLayout'
 
 function App() {
 
   return (
     <>
-      <TestPage />
+      <MainLayout />
     </>
   )
 }

@@ -1,4 +1,5 @@
 import "./HeaderNavBar.css";
+import ButtomAtom from "../atoms/ButtomAtom";
 
 export default function HeaderNavBar() {
     return (
@@ -11,10 +12,9 @@ export default function HeaderNavBar() {
                 <h1>Pokedex</h1>
             </div>
             <div>
-                <button>Games</button>
-                <button>Home</button>
-                <button>Langs</button>
-                <button>Pokedex</button>
+                <ButtomAtom>Home</ButtomAtom>
+                <ButtomAtom>Types</ButtomAtom>
+                <ButtomAtom>Generations</ButtomAtom>
             </div>
         </div>
     );

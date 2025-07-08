@@ -1,9 +1,7 @@
-// TestPage.js
-import React from 'react';
 import ListPokemonsTemplate from '../templates/ListPokemonsTemplate';
 import HeaderNavBar from '../organisms/HeaderNavBar';
 
-const TestPage = () => {
+const MainLayout = () => {
     return (
         <div>
             <HeaderNavBar />
@@ -12,4 +10,4 @@ const TestPage = () => {
     );
 };
 
-export default TestPage;
+export default MainLayout;
