@@ -7,20 +7,28 @@ import './ListPokemonsTemplate.css'
 export default function ListPokemonsTemplate() {
 
     const [ pokemons, setPokemons ] = useState();
+    const [ listPokemons, setListPokemons ] = useState();
     useEffect(() => {
         async function LoadData() {
             setPokemons(await fetchPokeApiData())
         }
         LoadData()
     }, [])
+
+    useEffect(() => {
+        setListPokemons(pokemons)
+    }, [pokemons])
     
+    function onHandleSearchChange () {
+
+    }
     
     return (
         <div className='list-pokemons'>
             <SearchBar />
             <div className='template-grid'>
                 {
-                    pokemons && pokemons.map(pokemon => 
+                    pokemons && listPokemons && listPokemons.map(pokemon => 
                         <div key={pokemon.id} className='card-container'>
                             <PokemonCardOrganism
                                 id={pokemon.id}
