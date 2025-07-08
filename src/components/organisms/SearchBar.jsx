@@ -6,7 +6,7 @@ import SearchIcon from "../../assets/SearchIcon.png";
 export default function SearchBar() {
     return (
         <div className="search-bar">
-            <img src={LeftRightPattern} alt="LeftRightPattern" />
+            <img src={LeftRightPattern} alt="LeftRightPattern" style={{width: "100%"}} />
             <div>
                 <div>
                     <img src={SearchIcon} alt="SearchIcon" />
@@ -14,7 +14,7 @@ export default function SearchBar() {
                 </div>
                 <p>esta sera una super barra para buscar poquemons</p>
             </div>
-            <img src={RightLeftPattern} alt="RightLeftPattern" />
+            <img src={RightLeftPattern} alt="RightLeftPattern" style={{width: "100%"}} />
         </div>
     );
 }
