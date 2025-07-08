@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 3rem;
+    margin: 1rem;
 }
 
 .card-text {
@@ -24,7 +24,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 3rem;
+    padding: 1rem 0.5rem;
 }
 
 .pokemon-card.grass {
@@ -69,6 +69,7 @@
 
 .pokemon-image {
     max-width: 100%;
+    margin-left: 2rem;
 }
 
 .pattern-img{

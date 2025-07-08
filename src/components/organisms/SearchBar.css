@@ -1,0 +1,5 @@
+.search-bar{
+    background-color: #EA5D60;
+    display: flex;
+    flex-direction: row;
+}
