@@ -1,0 +1,20 @@
+.main-layout{
+    display: grid;
+    grid-template-areas:
+        "header-navbar header-navbar"
+        "template-grid template-grid"
+        "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .layout-grid {
+        grid-template-areas:
+            "header-navbar"
+            "template-grid"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}

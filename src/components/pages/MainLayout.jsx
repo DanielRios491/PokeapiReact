@@ -3,7 +3,7 @@ import HeaderNavBar from '../organisms/HeaderNavBar';
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className='main-layout'>
             <HeaderNavBar />
             <ListPokemonsTemplate />
         </div>
