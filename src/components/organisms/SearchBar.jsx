@@ -2,6 +2,7 @@ import "./SearchBar.css";
 import LeftRightPattern from "../../assets/LeftRightPattern.png";
 import RightLeftPattern from "../../assets/RightLeftPattern.png";
 import SearchIcon from "../../assets/SearchIcon.png";
+import TextInputAtom from "../atoms/TextInputAtom";
 
 export default function SearchBar() {
     return (
@@ -9,10 +10,10 @@ export default function SearchBar() {
             <img src={LeftRightPattern} alt="LeftRightPattern" style={{width: "100%"}} />
             <div>
                 <div>
+                    <TextInputAtom />
                     <img src={SearchIcon} alt="SearchIcon" />
-                    <input type="text" />
                 </div>
-                <p>esta sera una super barra para buscar poquemons</p>
+                <p>Search for Pokémon by name or using the National Pokédex number.</p>
             </div>
             <img src={RightLeftPattern} alt="RightLeftPattern" style={{width: "100%"}} />
         </div>

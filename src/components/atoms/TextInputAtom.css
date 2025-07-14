@@ -1,0 +1,11 @@
+.text-input {
+    width: auto;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.text-input:focus {
+    border: none;
+}
