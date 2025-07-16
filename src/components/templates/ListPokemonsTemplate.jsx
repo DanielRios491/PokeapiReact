@@ -20,6 +20,9 @@ export default function ListPokemonsTemplate() {
     }, [pokemons])
     
     function onHandleSearchChange (query) {
+        if(query == ""){
+            setListPokemons(pokemons)
+        }
         setListPokemons(past => past.filter(pokemons => pokemons.name.toLowerCase().includes(query.toLowerCase())))
     }
     
