@@ -4,7 +4,7 @@ import RightLeftPattern from "../../assets/RightLeftPattern.png";
 import SearchIcon from "../../assets/SearchIcon.png";
 import TextInputAtom from "../atoms/TextInputAtom";
 
-export default function SearchBar() {
+export default function SearchBar({onChange}) {
     return (
         <div className="search-bar">
             <div className="search-frame">
@@ -12,7 +12,7 @@ export default function SearchBar() {
                 <div>
                     <div className="search-input-buton">
                         <img src={SearchIcon} alt="SearchIcon" />
-                        <TextInputAtom />
+                        <TextInputAtom onChange={onChange}/>
                     </div>
                 </div>
                 <img src={RightLeftPattern} alt="RightLeftPattern" style={{width: "100%"}} />

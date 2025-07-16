@@ -19,13 +19,13 @@ export default function ListPokemonsTemplate() {
         setListPokemons(pokemons)
     }, [pokemons])
     
-    function onHandleSearchChange () {
-
+    function onHandleSearchChange (query) {
+        setListPokemons(past => past.filter(pokemons => pokemons.name.toLowerCase().includes(query.toLowerCase())))
     }
     
     return (
         <div className='list-pokemons'>
-            <SearchBar />
+            <SearchBar onChange={onHandleSearchChange} />
             <div className='template-grid'>
                 {
                     pokemons && listPokemons && listPokemons.map(pokemon => 
