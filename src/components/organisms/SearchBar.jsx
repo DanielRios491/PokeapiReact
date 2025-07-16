@@ -7,15 +7,17 @@ import TextInputAtom from "../atoms/TextInputAtom";
 export default function SearchBar() {
     return (
         <div className="search-bar">
-            <img src={LeftRightPattern} alt="LeftRightPattern" style={{width: "100%"}} />
-            <div>
+            <div className="search-frame">
+                <img src={LeftRightPattern} alt="LeftRightPattern" style={{width: "100%"}} />
                 <div>
-                    <TextInputAtom />
-                    <img src={SearchIcon} alt="SearchIcon" />
+                    <div className="search-input-buton">
+                        <img src={SearchIcon} alt="SearchIcon" />
+                        <TextInputAtom />
+                    </div>
                 </div>
-                <p>Search for Pokémon by name or using the National Pokédex number.</p>
+                <img src={RightLeftPattern} alt="RightLeftPattern" style={{width: "100%"}} />
             </div>
-            <img src={RightLeftPattern} alt="RightLeftPattern" style={{width: "100%"}} />
+            <p>Search for Pokémon by name or using the National Pokédex number.</p>
         </div>
     );
 }

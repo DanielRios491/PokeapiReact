@@ -1,11 +1,7 @@
 .text-input {
-    width: auto;
+    flex: 1;
     padding: 1rem 1.25rem;
     font-size: 1rem;
-    border-radius: 0.5rem;
-    border: none;
-}
-
-.text-input:focus {
+    border-radius: 0 0.5rem 0.5rem 0;
     border: none;
 }
