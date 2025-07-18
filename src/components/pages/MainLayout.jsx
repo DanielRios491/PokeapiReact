@@ -5,7 +5,7 @@ import './MainLayout.css'
 const MainLayout = () => {
     return (
         <div className='main-layout'>
-            <HeaderNavBar />
+            <HeaderNavBar options={["Home", "Types", "Generations"]}/>
             <ListPokemonsTemplate />
         </div>
     );

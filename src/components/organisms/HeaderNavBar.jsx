@@ -1,7 +1,7 @@
 import "./HeaderNavBar.css";
 import ButtomAtom from "../atoms/ButtomAtom";
 
-export default function HeaderNavBar() {
+export default function HeaderNavBar({options}) {
     return (
         <div className="header-navbar">
             <div className="icon-logo">
@@ -12,9 +12,9 @@ export default function HeaderNavBar() {
                 <h1>Pokedex</h1>
             </div>
             <div>
-                <ButtomAtom>Home</ButtomAtom>
-                <ButtomAtom>Types</ButtomAtom>
-                <ButtomAtom>Generations</ButtomAtom>
+                <ButtomAtom>{options[0]}</ButtomAtom>
+                <ButtomAtom>{options[1]}</ButtomAtom>
+                <ButtomAtom>{options[2]}</ButtomAtom>
             </div>
         </div>
     );
