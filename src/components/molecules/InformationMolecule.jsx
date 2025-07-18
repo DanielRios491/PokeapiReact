@@ -1,6 +1,6 @@
 import NumberAtom from "../atoms/NumberAtom";
 import LabelAtom from "../atoms/LabelAtom";
-import "../styles/MoleculeStyles.css";
+import "./MoleculeStyles.css";
 
 export default function InformationMolecule({ id, name }) {
     return (

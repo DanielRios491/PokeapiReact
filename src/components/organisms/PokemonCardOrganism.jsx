@@ -1,7 +1,7 @@
 import PokemonTypeMolecule from "../molecules/PokemonTypeMolecule";
 import InformationMolecule from "../molecules/InformationMolecule";
 import Pattern from "../../assets/PatternDrawn.png";
-import '../styles/PokemonCard.css';
+import './PokemonCard.css';
 
 export default function PokemonCardOrganism({ id, name, types, color, image }) {
 

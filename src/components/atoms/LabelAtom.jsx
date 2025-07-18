@@ -1,4 +1,4 @@
-import "../styles/AtomStyles.css";
+import "./AtomStyles.css";
 
 const LabelAtom = ({ label }) => (
   <h1 className="pokemon-title">{label}</h1>

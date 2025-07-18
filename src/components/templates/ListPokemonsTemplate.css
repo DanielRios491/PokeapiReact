@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    padding: 0 5rem;
 }
 
 @media (max-width: 900px) {
@@ -15,4 +16,8 @@
     .template-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.card-container{
+    max-width: 430px;
 }
