@@ -11,7 +11,7 @@ export default function SearchBar({onChange}) {
                 <img src={LeftRightPattern} alt="LeftRightPattern" style={{width: "100%"}} />
                 <div>
                     <div className="search-input-buton">
-                        <img src={SearchIcon} alt="SearchIcon" />
+                        <img src={SearchIcon} alt="SearchIcon" className="search-icon" />
                         <TextInputAtom onChange={onChange}/>
                     </div>
                 </div>

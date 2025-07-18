@@ -13,10 +13,20 @@
 }
 
 .search-input-buton{
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     border-radius: 0.5rem;
     background-color: #F2F2F2;
+    padding-left: 0.5rem;
+}
+
+.search-icon{
+    color: #F2F2F2;
+}
+
+p{
+    margin: 0;
+    color: white;
 }
