@@ -1,11 +1,11 @@
 import LanguageBarOrganism from '../organisms/LanguageBarOrganism';
 import GameOrganism from '../organisms/GameOrganism';
 
-export default function PokemonGameTemplate() {
+export default function PokemonGameTemplate({ pokemons }) {
     return(
         <div className="game-template">
             <LanguageBarOrganism />
-            <GameOrganism />
+            <GameOrganism pokemons={pokemons} />
         </div>
     );
 }

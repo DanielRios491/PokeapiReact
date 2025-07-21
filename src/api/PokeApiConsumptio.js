@@ -30,3 +30,21 @@ export const fetchPokeApiData = async (limit = 20, offset = 0) => {
         console.error('Error fetching data:', error);
     }
 };
+
+export const getSpecies = async ( limit = 20, offset = 0 ) => {
+    const url = `https://pokeapi.co/api/v2/pokemon-species?limit=${limit}&offset=${offset}`;
+    
+    try {
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Failed to fetch Pokémon species:", error);
+        return null;
+    }
+}

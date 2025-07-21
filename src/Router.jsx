@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
-import App from "./App";
 import MainLayout from "./components/pages/MainLayout";
 import GameLayout from "./components/pages/GameLayout";
+import { getSpecies } from "./api/PokeApiConsumptio";
 
 const Router = createBrowserRouter([
     {
@@ -10,6 +10,9 @@ const Router = createBrowserRouter([
     },
     {
         path: "/game",
+        loader: async () => {
+            return { species: await getSpecies()}
+        },
         Component: GameLayout
     },
 ]);

@@ -1,0 +1,16 @@
+.language-button{
+    aspect-ratio: 3/2;
+    padding: 0;
+    border: 0;
+    max-width: 6rem;
+}
+
+.lang-icon{
+    width: 100%; 
+    display: block;
+}
+
+.language-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.4rem 0.75rem rgba(0, 0, 0, 0.2);
+}

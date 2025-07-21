@@ -17,7 +17,7 @@ export default function SearchBar({onChange}) {
                 </div>
                 <img src={RightLeftPattern} alt="RightLeftPattern" style={{width: "100%"}} />
             </div>
-            <p>Search for Pokémon by name or using the National Pokédex number.</p>
+            <span className="search-message">Search for Pokémon by name or using the National Pokédex number.</span>
         </div>
     );
 }
