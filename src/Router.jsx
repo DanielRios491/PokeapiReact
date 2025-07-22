@@ -6,7 +6,13 @@ import { getSpecies } from "./api/PokeApiConsumptio";
 const Router = createBrowserRouter([
     {
         path: "/",
-        Component: MainLayout
+        lazy: async () => {
+            const module = await import("./components/pages/MainLayout");
+            return {
+                Component: module.default,
+            };
+        },
+        /* Component: MainLayout */
     },
     {
         path: "/game",

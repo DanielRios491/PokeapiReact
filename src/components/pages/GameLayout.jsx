@@ -5,12 +5,11 @@ import { useLoaderData } from "react-router";
 
 const GameLayout = () => {
     const { species } = useLoaderData();
-    
+
     return (
         <div className='main-layout'>
             <HeaderNavBar options={["Game", "Langs", "Pokedex"]}/>
             <PokemonGameTemplate pokemons={species.results} />
-            
         </div>
     );
 };
