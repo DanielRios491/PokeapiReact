@@ -41,7 +41,7 @@ export default function ListPokemonsTemplate() {
                                 image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
                             />
                         </div>
-                        )
+                    )
                 }
             </div>
         </div>
