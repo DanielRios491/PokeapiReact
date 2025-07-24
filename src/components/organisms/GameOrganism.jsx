@@ -1,4 +1,4 @@
-export default function GameOrganism({ pokemons }) {
-    console.log(pokemons, "estos son los pokemons")
-    return <p>{ pokemons[0].name }</p>
+export default function GameOrganism({ pokemonState, handleAnswer }) {
+    console.log(pokemonState, "estos son los pokemons")
+    return <p>{ pokemonState.pokemonSelected.name }</p>
 }

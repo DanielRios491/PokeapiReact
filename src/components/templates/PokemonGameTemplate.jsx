@@ -1,11 +1,80 @@
 import LanguageBarOrganism from '../organisms/LanguageBarOrganism';
 import GameOrganism from '../organisms/GameOrganism';
+import { useReducer, useEffect } from "react";
+
+const initialState = {
+    pokemonSelected: null,
+    options: [],
+    score: 0,
+    attempts: 0,
+    gameOver: false,
+};
+
+function reducer(state, action) {
+    switch (action.type) {
+        case "newRound":
+            return {
+                ...state,
+                pokemonSelected: action.payload.selected,
+                options: action.payload.options,
+            };
+        case "answer":
+            const isCorrect = action.payload === state.pokemonSelected.name;
+            const nextAttempts = state.attempts + 1;
+            return {
+                ...state,
+                score: isCorrect ? state.score + 1 : state.score,
+                attempts: nextAttempts,
+                gameOver: nextAttempts >= 3,
+            };
+        case "reset":
+            return initialState;
+        default:
+            return state;
+    }
+}
 
 export default function PokemonGameTemplate({ pokemons }) {
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    const randomPokemon = () => {
+        const randomIndex = Math.floor(Math.random() * pokemons.length)
+        return pokemons[randomIndex];
+    }
+
+    const randomOptions = (pokemonSelected) => {
+        const pokemonsOptions = pokemons.filter(item => item !== pokemonSelected);
+        pokemonsOptions.sort(() => Math.random() -0.5)
+        return pokemonsOptions.slice(0,3);
+    }
+
+    const mixOptions = (pokemonSelected, options) => {
+        const mixedOptions = [...options, pokemonSelected]
+        return mixedOptions.sort(() => Math.random() -0.5);
+    }
+    
+    const newRound = () => {
+        const selected = randomPokemon();
+        const options = mixOptions(selected, randomOptions(selected));
+        dispatch({ type: "newRound", payload: { selected, options } });
+    };
+
+    const handleAnswer = (answer) => {
+        dispatch({ type: "answer", payload: answer });
+        if (state.attempts + 1 < 3) {
+            newRound();
+        }
+    };
+
+    useEffect(() => {
+        newRound();
+    }, []);
+
     return(
         <div className="game-template">
             <LanguageBarOrganism />
-            <GameOrganism pokemons={pokemons} />
+            {(state.pokemonSelected !== null) && <GameOrganism pokemonState={state} handleAnswer={handleAnswer} />}
         </div>
     );
 }
