@@ -56,8 +56,9 @@
 
 .pokemon-title {
     font-size: 1rem;
-    font-weight: bold;
     color: white;
+    border: none;
+    background-color: transparent;
 }
 
 .pokemon-id {

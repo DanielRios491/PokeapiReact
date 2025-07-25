@@ -1,3 +1,28 @@
-.image-dark{
-    filter: brightness(0);
+.game-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.pokemon-image{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.status{
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #EA5D60;
+    width: fit-content;
+    border: solid 0.2rem gold;
 }

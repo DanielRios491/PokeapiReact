@@ -3,3 +3,11 @@
     background-color: transparent;
     font-size: 1.2rem;
 }
+
+.red-button{
+    background-color: #EA5D60;
+    padding: 0.7rem 2.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    color: white;
+}

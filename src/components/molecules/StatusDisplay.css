@@ -1,0 +1,11 @@
+.status-col{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.status-row{
+    display: flex;
+    flex-direction: row;
+}

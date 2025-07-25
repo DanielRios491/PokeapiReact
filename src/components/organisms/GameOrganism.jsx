@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import './GameOrganism.css';
+import ButtonAtom from '../atoms/ButtomAtom';
+import PokemonImage from '../atoms/PokemonImage';
+import StatusDisplay from '../molecules/StatusDisplay';
 
-export default function GameOrganism({ pokemonState, handleAnswer, handleNewRound }) {
+export default function GameOrganism({ pokemonState, handleAnswer, handleNewRound, language }) {
 
     const [classImage, setClassImage] = useState(true);
-    
-    console.log(pokemonState.options, "estos son los pokemons")
 
     const handleClick = (name) => {
         setClassImage(!classImage);
@@ -17,30 +18,40 @@ export default function GameOrganism({ pokemonState, handleAnswer, handleNewRoun
         handleNewRound()
     }
 
+    const nameLanguage = (names) => {
+        if (!names) return "";
+        const resultName = names.find((item) => item.language.name === language);
+        return resultName ? resultName.name : "";
+    }
+
     return (
-        <div>
-            <div>
-                <span>{ pokemonState.score }</span>
-                <br />
-                <span>{ 3-pokemonState.attempts }</span>
+        <div className='game-container'>
+            <div className='status'>
+                <StatusDisplay score={pokemonState.score} attempts={3-pokemonState.attempts} />
             </div>
-            <div>
-                <img 
-                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonState.pokemonSelected.id}.png`} 
-                    alt="pokemonSelected" 
-                    className={`${classImage ? "image-dark" : ""}`} 
-                />
+            <div className='pokemon-image'>
+                <PokemonImage pokemonId={pokemonState.pokemonSelected.id} dark={classImage} />
             </div>
             {
                 classImage ? 
-                <div>
+                <div className='option-buttons'>
                     {
                         pokemonState.options.map((item, index) => {
-                            return <button key={index} onClick={() => handleClick(item.name)}>{item.name}</button>;
+                            const nameGetted = nameLanguage(item.names);
+                            return <ButtonAtom 
+                                        key={index}
+                                        onClick={() => handleClick(item.name)}
+                                        classname='red-button'>
+                                            {nameGetted}
+                                    </ButtonAtom>;
                         })
                     }
                 </div> :
-                <button onClick={() => handleNextRound()} >{pokemonState.gameOver ? "Start new game": "Next round"}</button>
+                <ButtonAtom 
+                    onClick={() => handleNextRound()} 
+                    classname='red-button'>
+                        {pokemonState.gameOver ? "Start new game": "Next round"}
+                </ButtonAtom>
             }
             
         </div>

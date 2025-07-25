@@ -1,6 +1,6 @@
 import LanguageBarOrganism from '../organisms/LanguageBarOrganism';
 import GameOrganism from '../organisms/GameOrganism';
-import { useReducer, useEffect } from "react";
+import { useReducer, useEffect, useState } from "react";
 
 const initialState = {
     pokemonSelected: null,
@@ -35,6 +35,7 @@ function reducer(state, action) {
 export default function PokemonGameTemplate({ pokemons }) {
 
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [language, setLanguage] = useState("en")
 
     const randomPokemon = () => {
         const randomIndex = Math.floor(Math.random() * pokemons.length)
@@ -80,8 +81,15 @@ export default function PokemonGameTemplate({ pokemons }) {
 
     return(
         <div className="game-template">
-            <LanguageBarOrganism />
-            {(state.pokemonSelected !== null) && <GameOrganism pokemonState={state} handleAnswer={handleAnswer} handleNewRound={handleNewRound} />}
+            <LanguageBarOrganism setLanguage={setLanguage}/>
+            {(state.pokemonSelected !== null) && 
+                <GameOrganism 
+                    pokemonState={state} 
+                    handleAnswer={handleAnswer} 
+                    handleNewRound={handleNewRound} 
+                    language={language}
+                />
+            }
         </div>
     );
 }
