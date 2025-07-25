@@ -1,7 +1,8 @@
 .buttom-atom{
     border: none;
     background-color: transparent;
-    font-size: 1.2rem;
+    font-weight: bold;
+    font-size: 0.8rem;
 }
 
 .red-button{
@@ -10,4 +11,23 @@
     border-radius: 0.3rem;
     border: none;
     color: white;
+}
+
+.super-logo{
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.red-button:hover {
+    transform: scale(1.2);
+}
+
+.buttom-atom:hover {
+    transform: scale(1.2);
+}
+
+.buttom-atom.active {
+    color: gray;
 }

@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 0.1rem 0.05rem rgba(0, 0, 0, 0.2);
+    padding: 1rem 4rem;
 }
 
 .icon-logo{
@@ -13,4 +14,10 @@
     display: flex;
     flex-direction: row;
     gap: 0.3rem;
+}
+
+.nav-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }
