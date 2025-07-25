@@ -19,13 +19,11 @@ function reducer(state, action) {
                 options: action.payload.options,
             };
         case "answer":
-            const isCorrect = action.payload === state.pokemonSelected.name;
-            const nextAttempts = state.attempts + 1;
             return {
                 ...state,
-                score: isCorrect ? state.score + 1 : state.score,
-                attempts: nextAttempts,
-                gameOver: nextAttempts >= 3,
+                score: action.payload.score,
+                attempts: action.payload.nextAttempts,
+                gameOver: action.payload.gameOver,
             };
         case "reset":
             return initialState;
@@ -61,11 +59,20 @@ export default function PokemonGameTemplate({ pokemons }) {
     };
 
     const handleAnswer = (answer) => {
-        dispatch({ type: "answer", payload: answer });
-        if (state.attempts + 1 < 3) {
-            newRound();
-        }
+        const isCorrect = answer === state.pokemonSelected.name;
+        const nextAttempts = state.attempts + 1;
+        const score = isCorrect ? state.score + 1 : state.score;
+        const gameOver = nextAttempts >= 3;
+        dispatch({ type: "answer", payload: {nextAttempts, score, gameOver} });
+        console.log(isCorrect, "es la respuesta")
     };
+
+    const handleNewRound = () => {
+        if (state.gameOver) {
+            dispatch({ type: "reset"})
+        }
+        newRound();
+    }
 
     useEffect(() => {
         newRound();
@@ -74,7 +81,7 @@ export default function PokemonGameTemplate({ pokemons }) {
     return(
         <div className="game-template">
             <LanguageBarOrganism />
-            {(state.pokemonSelected !== null) && <GameOrganism pokemonState={state} handleAnswer={handleAnswer} />}
+            {(state.pokemonSelected !== null) && <GameOrganism pokemonState={state} handleAnswer={handleAnswer} handleNewRound={handleNewRound} />}
         </div>
     );
 }

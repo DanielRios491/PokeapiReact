@@ -9,7 +9,7 @@ const GameLayout = () => {
     return (
         <div className='main-layout'>
             <HeaderNavBar options={["Game", "Langs", "Pokedex"]}/>
-            <PokemonGameTemplate pokemons={species.results} />
+            <PokemonGameTemplate pokemons={species} />
         </div>
     );
 };

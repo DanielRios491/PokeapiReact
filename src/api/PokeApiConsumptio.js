@@ -41,8 +41,21 @@ export const getSpecies = async ( limit = 20, offset = 0 ) => {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = await response.json();
-        return data;
+        const { results } = await response.json();
+
+        const detailPromises = results.map(async (r) => {
+            const pokeRes = await fetch(r.url);
+            const poke = await pokeRes.json();
+
+            return {
+                    id: poke.id,
+                    name: poke.name,
+                    names: poke.names,
+                };
+        });
+
+        const detailed = await Promise.all(detailPromises);
+        return detailed;
     } catch (error) {
         console.error("Failed to fetch Pokémon species:", error);
         return null;
