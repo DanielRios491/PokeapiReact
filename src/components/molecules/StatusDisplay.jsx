@@ -1,7 +1,7 @@
 import LabelAtom from "../atoms/LabelAtom";
 import './StatusDisplay.css'
 
-export default function StatusDisplay({score, attempts}) {
+export default function StatusDisplay({score, attempts, result}) {
     return(
         <div className="status-col">
             <div className="status-row">
@@ -12,6 +12,13 @@ export default function StatusDisplay({score, attempts}) {
                 <LabelAtom label={"Attemps:"}/>
                 <LabelAtom label={attempts}/>
             </div>
+            {
+                (attempts === 0 && score >= 1) ? 
+                    <LabelAtom label={"Congratulations!"} />:
+                    (result === "win") ? 
+                        <LabelAtom label={"Correct!"} /> :
+                        <LabelAtom label={"Wrong!"} />
+            }
         </div>
     );
 }

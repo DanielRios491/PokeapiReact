@@ -26,8 +26,8 @@ export default function GameOrganism({ pokemonState, handleAnswer, handleNewRoun
 
     return (
         <div className='game-container'>
-            <div className='status'>
-                <StatusDisplay score={pokemonState.score} attempts={3-pokemonState.attempts} />
+            <div className={`status ${pokemonState.result}`}>
+                <StatusDisplay score={pokemonState.score} attempts={3-pokemonState.attempts} result={pokemonState.result} />
             </div>
             <div className='pokemon-image'>
                 <PokemonImage pokemonId={pokemonState.pokemonSelected.id} dark={classImage} />

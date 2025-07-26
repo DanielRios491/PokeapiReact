@@ -24,5 +24,13 @@
     margin: 1rem;
     background-color: #EA5D60;
     width: fit-content;
-    border: solid 0.2rem gold;
+    border: solid 0.2rem #EA5D60;
+}
+
+.status.win{
+    border: solid 0.2rem gold !important;
+}
+
+.status.lose{
+    border: solid 0.2rem brown !important;
 }

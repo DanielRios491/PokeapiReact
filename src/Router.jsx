@@ -5,7 +5,14 @@ import { getSpecies } from "./api/PokeApiConsumptio";
 
 const Router = createBrowserRouter([
     {
-        path: "/",
+        index: true,
+        loader: async () => {
+            return { species: await getSpecies()}
+        },
+        Component: GameLayout
+    },
+    {
+        path: "/pokedex",
         lazy: async () => {
             const module = await import("./components/pages/MainLayout");
             return {
@@ -14,13 +21,7 @@ const Router = createBrowserRouter([
         },
         /* Component: MainLayout */
     },
-    {
-        path: "/game",
-        loader: async () => {
-            return { species: await getSpecies()}
-        },
-        Component: GameLayout
-    },
+
 ]);
 
 export default Router;

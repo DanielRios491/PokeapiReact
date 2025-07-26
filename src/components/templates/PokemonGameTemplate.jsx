@@ -8,6 +8,7 @@ const initialState = {
     score: 0,
     attempts: 0,
     gameOver: false,
+    result: "no-result"
 };
 
 function reducer(state, action) {
@@ -17,6 +18,7 @@ function reducer(state, action) {
                 ...state,
                 pokemonSelected: action.payload.selected,
                 options: action.payload.options,
+                result: "no-result",
             };
         case "answer":
             return {
@@ -24,6 +26,7 @@ function reducer(state, action) {
                 score: action.payload.score,
                 attempts: action.payload.nextAttempts,
                 gameOver: action.payload.gameOver,
+                result: action.payload.result,
             };
         case "reset":
             return initialState;
@@ -64,8 +67,9 @@ export default function PokemonGameTemplate({ pokemons }) {
         const nextAttempts = state.attempts + 1;
         const score = isCorrect ? state.score + 1 : state.score;
         const gameOver = nextAttempts >= 3;
-        dispatch({ type: "answer", payload: {nextAttempts, score, gameOver} });
-        console.log(isCorrect, "es la respuesta")
+        const result = isCorrect ? "win" : "lose"
+        dispatch({ type: "answer", payload: {nextAttempts, score, gameOver, result} });
+        console.log(result, "es la respuesta")
     };
 
     const handleNewRound = () => {
