@@ -1,4 +1,4 @@
-export const fetchPokeApiData = async (limit = 20, offset = 0) => {
+export const fetchPokeApiData = async (limit = 25, offset = 0) => {
     try {
         const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
         const response = await fetch(url);

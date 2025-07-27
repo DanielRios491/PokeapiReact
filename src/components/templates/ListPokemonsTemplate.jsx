@@ -1,17 +1,39 @@
 import PokemonCardOrganism from '../organisms/PokemonCardOrganism';
 import { fetchPokeApiData } from '../../api/PokeApiConsumptio';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import SearchBar from '../organisms/SearchBar';
 import './ListPokemonsTemplate.css'
 import { useLoaderData } from 'react-router';
 
 export default function ListPokemonsTemplate() {
     const { pokemons } = useLoaderData();
-    const [ listPokemons, setListPokemons ] = useState();
+    const [ listPokemons, setListPokemons ] = useState(pokemons);
+    const loaderRef = useRef(null);
+    const [offset, setOffset] = useState(0);
+    const [limit, setLimit] = useState(25);
 
     useEffect(() => {
-        setListPokemons(pokemons)
-    }, [pokemons])
+        const observer = new IntersectionObserver(async entries => {
+            if (entries[0].isIntersecting) {
+                setOffset(prev => {
+                    return prev < 150 ? prev + limit : prev + 1;
+                });
+            }
+        });
+
+        if (loaderRef.current) observer.observe(loaderRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        console.log(offset, listPokemons.length, "controlamos la cantidad maxima")
+        if(listPokemons.length === 125) setLimit(1)
+        const loadPokemons = async () => {
+            const newPokemons = await fetchPokeApiData(limit, offset);
+            setListPokemons(prev => [...prev, ...newPokemons]);
+        };
+        if (offset != 0 && listPokemons.length < 152) loadPokemons();
+    }, [offset]);
     
     function onHandleSearchChange (query) {
         if(query == ""){
@@ -38,6 +60,7 @@ export default function ListPokemonsTemplate() {
                     )
                 }
             </div>
+            {<div ref={loaderRef} style={{ height: '20px' }} />}
         </div>
     );
 }
