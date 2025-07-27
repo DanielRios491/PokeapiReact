@@ -1,14 +1,14 @@
+import { useLoaderData } from "react-router";
 import HeaderNavBar from '../organisms/HeaderNavBar';
 import PokemonGameTemplate from '../templates/PokemonGameTemplate';
 import './GameLayout.css';
-import { useLoaderData } from "react-router";
 
 const GameLayout = () => {
     const { species } = useLoaderData();
     const options = [
-        { path: "/game", label: "Game" },
-        { path: "/game", label: "Langs" },
-        { path: "/", label: "Pokedex" },
+        { path: "/", label: "Game" },
+        { path: "/", label: "Langs" },
+        { path: "/pokedex", label: "Pokedex" },
     ];
 
     return (

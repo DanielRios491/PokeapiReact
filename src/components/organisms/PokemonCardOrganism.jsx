@@ -17,6 +17,7 @@ export default function PokemonCardOrganism({ id, name, types, color, image }) {
                     src={image}
                     alt={name}
                     className="pokemon-image"
+                    loading="lazy"
                 />
             </div>
         </div>

@@ -3,17 +3,11 @@ import { fetchPokeApiData } from '../../api/PokeApiConsumptio';
 import { useState, useEffect } from 'react';
 import SearchBar from '../organisms/SearchBar';
 import './ListPokemonsTemplate.css'
+import { useLoaderData } from 'react-router';
 
 export default function ListPokemonsTemplate() {
-
-    const [ pokemons, setPokemons ] = useState();
+    const { pokemons } = useLoaderData();
     const [ listPokemons, setListPokemons ] = useState();
-    useEffect(() => {
-        async function LoadData() {
-            setPokemons(await fetchPokeApiData())
-        }
-        LoadData()
-    }, [])
 
     useEffect(() => {
         setListPokemons(pokemons)

@@ -14,10 +14,11 @@ export default function StatusDisplay({score, attempts, result}) {
             </div>
             {
                 (attempts === 0 && score >= 1) ? 
-                    <LabelAtom label={"Congratulations!"} />:
-                    (result === "win") ? 
-                        <LabelAtom label={"Correct!"} /> :
-                        <LabelAtom label={"Wrong!"} />
+                    <LabelAtom label={"Congratulations!"} /> :
+                    <>
+                        {result === "win" && <LabelAtom label={"Correct!"} />}
+                        {result === "lose" && <LabelAtom label={"Wrong!"} />}
+                    </>
             }
         </div>
     );

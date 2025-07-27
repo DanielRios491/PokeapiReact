@@ -13,7 +13,7 @@ export default function PokemonImage({
         <img
             src={imageUrl}
             alt={name}
-            className={`${dark ? "image-dark" : ""}`}
+            className={`${dark ? "image-dark" : "image-normal"}`}
             {...props}
         />
     );
