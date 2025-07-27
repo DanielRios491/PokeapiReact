@@ -1,33 +1,38 @@
 .type-badge {
-    padding: 0.1rem 0.5rem;
-    border-radius: 3px;
+    padding: 0.2rem 0.2rem;
+    border-radius: 1px;
     color: white;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     margin-right: 0.3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.type-text{
+    margin: 0;
 }
 
 .type-badge.grass {
-    background-color: #62B957;
+    background-color: #62B957; 
 }
 
 .type-badge.fire {
     background-color: #FD7D24;
 }
 
-.type-badge.fliying {
+.type-badge.flying {
     background-color: #748FC9;
 }
 
 .type-badge.water {
-    background-color: #58ABF6;
+    background-color: #4A90DA;
 }
 
 .type-badge.normal {
-    background-color: #B5B9C4;
+    background-color: #9DA0AA;
 }
 
 .type-badge.poison {
@@ -35,35 +40,35 @@
 }
 
 .type-badge.electric {
-    background-color: #F2CB55;
+    background-color: #EED535;
 }
 
 .type-badge.ground {
-    background-color: #F78551;
+    background-color: #DD7748;
 }
 
 .type-badge.fairy {
-    background-color: #EBA8C3;
+    background-color: #ED6EC7;
 }
 
 .type-badge.bug {
-    background-color: #8BD674;
+    background-color: #8CB230;
 }
 
 .type-badge.fighting {
-    background-color: #EB4971;
+    background-color: #D04164;
 }
 
 .pokemon-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: white;
     border: none;
+    font-family: 'Roboto', sans-serif;
     background-color: transparent;
 }
 
 .pokemon-id {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
     color: #ffffffcc;
-    margin-top: 75px;
 }

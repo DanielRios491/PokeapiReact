@@ -4,7 +4,7 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     margin: 1rem;
 }
 
@@ -12,10 +12,9 @@
     min-width: 35%;
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
-    gap: auto;
+    gap: 1.2rem;
     padding-left: 1rem;
-    padding-top: 1rem;
+    padding-top: 0.6rem;
 }
 
 .card-image {
@@ -73,6 +72,6 @@
 }
 
 .pattern-img{
-    width: 60%;
+    width: 75%;
     flex-grow: 1;
 }

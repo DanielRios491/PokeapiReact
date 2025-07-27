@@ -1,7 +1,7 @@
 import "./AtomStyles.css";
 
 const LabelAtom = ({ label }) => (
-  <button className="pokemon-title">{label}</button>
+  <span className="pokemon-title">{label}</span>
 );
 
 export default LabelAtom;

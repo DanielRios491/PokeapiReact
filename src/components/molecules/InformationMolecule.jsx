@@ -6,7 +6,7 @@ export default function InformationMolecule({ id, name }) {
     return (
         <div className="pokemon-information">
             <NumberAtom id={id} />
-            <LabelAtom label={name} />
+            <LabelAtom label={name[0].toUpperCase() + name.slice(1)} />
         </div>
     );
 }

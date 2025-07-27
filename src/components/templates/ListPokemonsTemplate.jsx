@@ -1,5 +1,4 @@
 import PokemonCardOrganism from '../organisms/PokemonCardOrganism';
-import { fetchPokeApiData } from '../../api/PokeApiConsumptio';
 import { useState, useEffect, useRef } from 'react';
 import SearchBar from '../organisms/SearchBar';
 import './ListPokemonsTemplate.css'
@@ -7,17 +6,14 @@ import { useLoaderData } from 'react-router';
 
 export default function ListPokemonsTemplate() {
     const { pokemons } = useLoaderData();
-    const [ listPokemons, setListPokemons ] = useState(pokemons);
-    const loaderRef = useRef(null);
-    const [offset, setOffset] = useState(0);
+    const [listPokemons, setListPokemons] = useState(pokemons.slice(0, 25));
     const [limit, setLimit] = useState(25);
+    const loaderRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(async entries => {
             if (entries[0].isIntersecting) {
-                setOffset(prev => {
-                    return prev < 150 ? prev + limit : prev + 1;
-                });
+                setLimit(prev => prev + 25);
             }
         });
 
@@ -26,20 +22,15 @@ export default function ListPokemonsTemplate() {
     }, []);
 
     useEffect(() => {
-        console.log(offset, listPokemons.length, "controlamos la cantidad maxima")
-        if(listPokemons.length === 125) setLimit(1)
-        const loadPokemons = async () => {
-            const newPokemons = await fetchPokeApiData(limit, offset);
-            setListPokemons(prev => [...prev, ...newPokemons]);
-        };
-        if (offset != 0 && listPokemons.length < 152) loadPokemons();
-    }, [offset]);
+        console.log(limit, listPokemons.length, "revisamos los datos")
+        if(limit != 25) setListPokemons(pokemons.slice(0, limit));
+    }, [limit]);
     
     function onHandleSearchChange (query) {
         if(query == ""){
             setListPokemons(pokemons)
         }
-        setListPokemons(past => past.filter(pokemons => pokemons.name.toLowerCase().includes(query.toLowerCase())))
+        setListPokemons(pokemons => pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(query.toLowerCase())))
     }
     
     return (

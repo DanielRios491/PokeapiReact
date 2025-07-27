@@ -29,7 +29,7 @@ const Router = createBrowserRouter([
                     };
                 }, */
                 loader: async () => {
-                    return { pokemons: await fetchPokeApiData()}
+                    return { pokemons: await fetchPokeApiData(60,0)}
                 },
                 Component: ListPokemonsTemplate,
             },
