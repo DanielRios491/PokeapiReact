@@ -21,3 +21,7 @@
 .card-container{
     max-width: 430px;
 }
+
+.card-container:active{
+    transform: scale(1.1);
+}

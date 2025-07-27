@@ -1,0 +1,8 @@
+.pokemon-information{
+    display: flex;
+    flex-direction: row;
+}
+.pokemon-column-information{
+    display: flex;
+    flex-direction: column;
+}

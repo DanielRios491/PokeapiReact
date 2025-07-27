@@ -3,8 +3,11 @@ import { useState, useEffect, useRef } from 'react';
 import SearchBar from '../organisms/SearchBar';
 import './ListPokemonsTemplate.css'
 import { useLoaderData } from 'react-router';
+import { useNavigate, useLocation } from "react-router";
 
 export default function ListPokemonsTemplate() {
+    const navigate = useNavigate();
+    const location = useLocation();
     const { pokemons } = useLoaderData();
     const [listPokemons, setListPokemons] = useState(pokemons.slice(0, 25));
     const [limit, setLimit] = useState(25);
@@ -32,6 +35,11 @@ export default function ListPokemonsTemplate() {
         }
         setListPokemons(pokemons => pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(query.toLowerCase())))
     }
+
+    function handleClickDiv (id) {
+        console.log("nos vamos a la ruta hija", id)
+        navigate(`/pokedex/${id}`)
+    }
     
     return (
         <div className='list-pokemons'>
@@ -39,7 +47,7 @@ export default function ListPokemonsTemplate() {
             <div className='template-grid'>
                 {
                     pokemons && listPokemons && listPokemons.map(pokemon => 
-                        <div key={pokemon.id} className='card-container'>
+                        <div key={pokemon.id} className='card-container' onClick={() => handleClickDiv(pokemon.id)}>
                             <PokemonCardOrganism
                                 id={pokemon.id}
                                 name={pokemon.name}
