@@ -3,6 +3,14 @@
     width: 40%;
 }
 
+.pokemon-section{
+    background-image: url("../../assets/PokeballComplete.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1rem 0.5rem;
+}
+
 .image-navigation.grass {
     background-color: #8BBE8A;
 }
