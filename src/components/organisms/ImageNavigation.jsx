@@ -1,7 +1,12 @@
 import "./ImageNavigation.css";
 import Pattern from "../../assets/PatternDrawn.png";
+import ButtonAtom from "../atoms/ButtonAtom";
 
 export default function ImageNavigation({id, type}) {
+
+    const previus = id === 1 ? 898 : id - 1;
+    const next = id + 1;
+
     return (
         <div className={`image-navigation ${type}`}>
             <div className="patterns">
@@ -13,6 +18,10 @@ export default function ImageNavigation({id, type}) {
                     alt="Pokemon" 
                     loading="lazy"
                 />
+            </div>
+            <div className="buttons-section">
+                <ButtonAtom classname="previus-button">{`Previus ${previus}`}</ButtonAtom>
+                <ButtonAtom classname="next-button">{`Previus ${next}`}</ButtonAtom>
             </div>
         </div>
     );

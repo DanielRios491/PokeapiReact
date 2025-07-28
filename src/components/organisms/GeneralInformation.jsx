@@ -3,7 +3,7 @@ import LabelAtom from "../atoms/LabelAtom";
 import NumberAtom from "../atoms/NumberAtom";
 import TypeBadgeIcon from "../atoms/TypeBadgeIcon";
 import "./GeneralInformation.css";
-import ButtonAtom from "../atoms/ButtomAtom";
+import ButtonAtom from "../atoms/ButtonAtom";
 
 export default function GeneralInformation({id ,name ,generation ,types}){
     const navigate = useNavigate();

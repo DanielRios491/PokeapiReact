@@ -1,6 +1,11 @@
 .image-navigation{
-    padding: 2rem;
-    width: 40%;
+    width: 45%;
+}
+
+.buttons-section{
+    display: flex;
+    flex-direction: row;
+    padding: 0 2rem;
 }
 
 .pokemon-section{
@@ -55,8 +60,9 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    padding: 2.5rem 3.5rem;
 }
 
 .pattern-img{
-    width: 30%;
+    width: 40%;
 }

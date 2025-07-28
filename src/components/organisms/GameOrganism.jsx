@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './GameOrganism.css';
-import ButtonAtom from '../atoms/ButtomAtom';
+import ButtonAtom from '../atoms/ButtonAtom';
 import PokemonImage from '../atoms/PokemonImage';
 import StatusDisplay from '../molecules/StatusDisplay';
 

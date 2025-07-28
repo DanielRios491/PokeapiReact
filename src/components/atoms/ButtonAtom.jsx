@@ -1,4 +1,4 @@
-import "./ButtomAtom.css";
+import "./ButtonAtom.css";
 import PropTypes from "prop-types";
 
 export default function ButtonAtom({
