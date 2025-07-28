@@ -28,7 +28,7 @@ export default function PokemonInformation() {
                     evolutionChain={pokemonInfo.evolutionChain}
                 />
             </div>
-            <ImageNavigation id={pokemonInfo.id} />
+            <ImageNavigation id={pokemonInfo.id} type={pokemonInfo.types[0]}/>
         </div>
     );
 }

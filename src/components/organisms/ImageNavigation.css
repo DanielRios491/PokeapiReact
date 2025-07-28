@@ -1,3 +1,54 @@
 .image-navigation{
+    padding: 2rem;
     width: 40%;
+}
+
+.image-navigation.grass {
+    background-color: #8BBE8A;
+}
+
+.image-navigation.fire {
+    background-color: #FFA756;
+}
+
+.image-navigation.water {
+    background-color: #58ABF6;
+}
+
+.image-navigation.normal {
+    background-color: #B5B9C4;
+}
+
+.image-navigation.poison {
+    background-color: #9F6E97;
+}
+
+.image-navigation.electric {
+    background-color: #F2CB55;
+}
+
+.image-navigation.ground {
+    background-color: #F78551;
+}
+
+.image-navigation.fairy {
+    background-color: #EBA8C3;
+}
+
+.image-navigation.bug {
+    background-color: #8BD674;
+}
+
+.image-navigation.fighting {
+    background-color: #EB4971;
+}
+
+.patterns{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.pattern-img{
+    width: 30%;
 }
