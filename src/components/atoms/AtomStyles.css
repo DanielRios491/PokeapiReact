@@ -72,3 +72,14 @@
     font-family: 'Roboto', sans-serif;
     color: #ffffffcc;
 }
+
+.id-bigger{
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.name-bigger{
+    font-size: 5rem;
+    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+}

@@ -4,6 +4,8 @@ import GameLayout from "./components/pages/GameLayout";
 import ListPokemonsTemplate from "./components/templates/ListPokemonsTemplate";
 import PokemonInformation from "./components/templates/PokemonInformation";
 import { getSpecies, fetchPokeApiData } from "./api/PokeApiConsumptio";
+import { getFullPokemonData } from "./api/PokemonInfoApi";
+import ErrorTemplate from "./components/templates/ErrorTemplate";
 
 const Router = createBrowserRouter([
     {
@@ -32,15 +34,16 @@ const Router = createBrowserRouter([
                     return { pokemons: await fetchPokeApiData(60,0)}
                 },
                 Component: ListPokemonsTemplate,
+                errorElement: ErrorTemplate
             },
             {
                 path: ":pokemonId",
                 loader: async ({ params }) => {
-                    // params are available in loaders/actions
-                    // let team = await fetchTeam(params.teamId);
-                    return { pokemonId: params.pokemonId };
+                    let pokemonInfo = await getFullPokemonData(params.pokemonId)
+                    return { pokemonInfo };
                 },
                 Component: PokemonInformation,
+                errorElement: ErrorTemplate
             }
         ]
     },

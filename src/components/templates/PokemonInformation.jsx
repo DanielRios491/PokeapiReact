@@ -2,22 +2,33 @@ import { useLoaderData } from "react-router";
 import ImageNavigation from "../organisms/ImageNavigation";
 import GeneralInformation from "../organisms/GeneralInformation";
 import SpecificInformation from "../organisms/SpecificInformation";
-import { useNavigate } from "react-router";
+import "./PokemonInformation.css";
 
 export default function PokemonInformation() {
-    const { pokemonId } = useLoaderData();
-    const navigate = useNavigate();
+    const { pokemonInfo } = useLoaderData();
+    console.log(pokemonInfo)
+
     return (
         <div className="pokemon-information">
-            <div className="pokemon-column-information">
-                <div>{`Aqui ira la informacion del pokemons ${pokemonId}`}</div>
-                <button onClick={() => navigate(-1)}>
-                    ← Volver
-                </button>
-                <GeneralInformation />
-                <SpecificInformation />
+            <div className="pokemon-column-information">    
+                <GeneralInformation 
+                    id={pokemonInfo.id} 
+                    name={pokemonInfo.name} 
+                    generation={pokemonInfo.generation} 
+                    types={pokemonInfo.types} 
+                />
+                <SpecificInformation
+                    species={pokemonInfo.species}
+                    about={pokemonInfo.flavor_text}
+                    height={pokemonInfo.height}
+                    weight={pokemonInfo.weight}
+                    abilities={pokemonInfo.abilities}
+                    weaknesses={pokemonInfo.weaknesses}
+                    stats={pokemonInfo.stats}
+                    evolutionChain={pokemonInfo.evolutionChain}
+                />
             </div>
-            <ImageNavigation />
+            <ImageNavigation id={pokemonInfo.id} />
         </div>
     );
 }

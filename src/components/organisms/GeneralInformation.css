@@ -1,0 +1,15 @@
+.general-information{
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.information-types{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.generation-information{
+    font-family: 'Roboto', sans-serif;
+}

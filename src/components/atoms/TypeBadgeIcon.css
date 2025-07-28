@@ -1,0 +1,55 @@
+.type-icon{
+    border-radius: 2rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem;
+}
+
+.type-image{
+    max-width: 1.3rem;
+    max-height: 1.3rem;
+}
+
+.type-icon.grass {
+    background-color: #62B957; 
+}
+
+.type-icon.fire {
+    background-color: #FD7D24;
+}
+
+.type-icon.flying {
+    background-color: #748FC9;
+}
+
+.type-icon.water {
+    background-color: #4A90DA;
+}
+
+.type-icon.normal {
+    background-color: #9DA0AA;
+}
+
+.type-icon.poison {
+    background-color: #A552CC;
+}
+
+.type-icon.electric {
+    background-color: #EED535;
+}
+
+.type-icon.ground {
+    background-color: #DD7748;
+}
+
+.type-icon.fairy {
+    background-color: #ED6EC7;
+}
+
+.type-icon.bug {
+    background-color: #8CB230;
+}
+
+.type-icon.fighting {
+    background-color: #D04164;
+}

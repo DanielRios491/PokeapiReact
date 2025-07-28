@@ -31,3 +31,12 @@
 .buttom-atom.active {
     color: gray;
 }
+
+.big-size{
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    width: fit-content;
+    font-family: 'Roboto', sans-serif;
+}
